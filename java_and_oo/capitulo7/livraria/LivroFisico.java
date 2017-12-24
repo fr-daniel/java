@@ -1,16 +1,17 @@
 /**
  * LivroFisico
  */
-public class LivroFisico extends Livro {
+public class LivroFisico extends Livro implements IPromocional {
 
     public LivroFisico(Autor autor) {
         super(autor);
     }
 
     @Override
-    public boolean aplicaDescontoDe() {
+    public boolean aplicaDescontoDe(double porcentagem) {
         if(porcentagem <= 0.3) {
-            this.valor -= this.valor * porcentagem;
+            double desconto = getValor() * porcentagem;
+            setValor(getValor() - desconto);
             return true;
         }
         return false;

@@ -1,7 +1,7 @@
 /**
  * Ebook
  */
-public class Ebook extends Livro {
+public class Ebook extends Livro implements IPromocional {
     private String waterMark;
 
     public Ebook(Autor autor) {
