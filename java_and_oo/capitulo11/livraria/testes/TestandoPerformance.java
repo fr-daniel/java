@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * TestandoPerformance
+ */
+public class TestandoPerformance {
+
+    public static void main(String[] args) {
+        List<String> colecao =  new ArrayList<>();
+
+        for(int i = 0; i < 100000; i++) {
+            colecao.add("Item"+1);
+        }
+
+        long inicio = System.currentTimeMillis();
+
+        for(int i = 0; i < 100000; i++) {
+            colecao.contains("Item"+i);
+        }
+
+        long fim = System.currentTimeMillis();
+        long tempo = fim - inicio;
+        
+        System.out.println("Demorou " + tempo + "MS para executar.");
+    }
+    
+}
